@@ -3,10 +3,20 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Andrés Tovar Sandoval — Ingeniero de Sistemas | Backend & Integraciones</title>
-<meta name="description" content="Portafolio de Andrés Felipe Tovar Sandoval, Ingeniero de Sistemas especializado en backend C#, bases de datos Oracle/SQL Server e integración de sistemas empresariales." />
+<title data-i18n="meta.title">Andrés Tovar Sandoval — Ingeniero de Sistemas | Backend & Integraciones</title>
+<meta name="description" data-i18n-attr="content:meta.description" content="Portafolio de Andrés Felipe Tovar Sandoval, Ingeniero de Sistemas especializado en backend C#, bases de datos Oracle/SQL Server e integración de sistemas empresariales." />
 <link rel="icon" href="data:,">
 <link rel="stylesheet" href="styles.css" />
+<script>
+  (function () {
+    try {
+      var theme = localStorage.getItem("theme");
+      var lang = localStorage.getItem("lang");
+      if (theme === "light") document.documentElement.setAttribute("data-theme", "light");
+      if (lang === "en") document.documentElement.setAttribute("lang", "en");
+    } catch (e) {}
+  })();
+</script>
 </head>
 <body>
 
@@ -14,14 +24,20 @@
   <nav class="nav">
     <a href="#top" class="brand">Andrés <span>Tovar</span></a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#about">Sobre mí</a></li>
-      <li><a href="#skills">Habilidades</a></li>
-      <li><a href="#experience">Experiencia</a></li>
-      <li><a href="#projects">Proyectos</a></li>
-      <li><a href="#certifications">Certificaciones</a></li>
-      <li><a href="#contact">Contacto</a></li>
+      <li><a href="#about" data-i18n="nav.about">Sobre mí</a></li>
+      <li><a href="#skills" data-i18n="nav.skills">Habilidades</a></li>
+      <li><a href="#experience" data-i18n="nav.experience">Experiencia</a></li>
+      <li><a href="#projects" data-i18n="nav.projects">Proyectos</a></li>
+      <li><a href="#certifications" data-i18n="nav.certifications">Certificaciones</a></li>
+      <li><a href="#contact" data-i18n="nav.contact">Contacto</a></li>
     </ul>
-    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">☰</button>
+    <div class="nav-controls">
+      <button class="icon-btn" id="langToggle" type="button" aria-label="Switch language">EN</button>
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle theme">
+        <span id="themeIcon">🌙</span>
+      </button>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Abrir menú" data-i18n-attr="aria-label:nav.toggleMenu">☰</button>
+    </div>
   </nav>
 </header>
 
@@ -29,13 +45,13 @@
 
   <section class="hero">
     <div class="container">
-      <div class="hero-eyebrow">Ingeniero de Sistemas · Barranquilla, Colombia</div>
+      <div class="hero-eyebrow" data-i18n="hero.eyebrow">Ingeniero de Sistemas · Barranquilla, Colombia</div>
       <h1>Andrés Felipe Tovar Sandoval</h1>
-      <p class="tagline">Desarrollo backend en C#, administración de bases de datos Oracle/SQL Server e integración de sistemas empresariales. Enfocado en soluciones eficientes, escalables y bien documentadas.</p>
+      <p class="tagline" data-i18n="hero.tagline">Desarrollo backend en C#, administración de bases de datos Oracle/SQL Server e integración de sistemas empresariales. Enfocado en soluciones eficientes, escalables y bien documentadas.</p>
       <div class="btn-row">
-        <a href="#projects" class="btn btn-primary">Ver proyectos</a>
-        <a href="assets/cv/Andres_Tovar_CV_ES.pdf" class="btn btn-secondary" target="_blank" rel="noopener">Descargar CV</a>
-        <a href="#contact" class="btn btn-secondary">Contactar</a>
+        <a href="#projects" class="btn btn-primary" data-i18n="hero.btnProjects">Ver proyectos</a>
+        <a href="assets/cv/Andres_Tovar_CV_ES.pdf" class="btn btn-secondary" id="cvBtn" target="_blank" rel="noopener" data-i18n="hero.btnCv">Descargar CV</a>
+        <a href="#contact" class="btn btn-secondary" data-i18n="hero.btnContact">Contactar</a>
       </div>
     </div>
   </section>
@@ -43,11 +59,11 @@
   <section id="about">
     <div class="container">
       <div class="section-head">
-        <div class="section-eyebrow">Perfil</div>
-        <h2>Sobre mí</h2>
+        <div class="section-eyebrow" data-i18n="about.eyebrow">Perfil</div>
+        <h2 data-i18n="about.heading">Sobre mí</h2>
       </div>
       <div class="about-grid">
-        <p>
+        <p data-i18n="about.body">
           Ingeniero de Sistemas de la Universidad del Norte (2024) con más de 4 años de experiencia en bases de datos
           Oracle y SQL Server, desarrollo backend en C# e integración de sistemas empresariales. Experto en servicios
           web, triggers, jobs y esquemas optimizados. Con amplio conocimiento en el flujo de aplicaciones de
@@ -56,10 +72,10 @@
           reduciendo tareas manuales.
         </p>
         <div class="facts">
-          <div class="fact"><div class="label">Ubicación</div><div class="value">Barranquilla, Colombia</div></div>
-          <div class="fact"><div class="label">Experiencia</div><div class="value">+4 años en backend & bases de datos</div></div>
-          <div class="fact"><div class="label">Enfoque</div><div class="value">Integraciones empresariales & automatización</div></div>
-          <div class="fact"><div class="label">CV en inglés</div><div class="value"><a href="assets/cv/Andres_Tovar_CV_EN.pdf" target="_blank" rel="noopener">Descargar PDF ↗</a></div></div>
+          <div class="fact"><div class="label" data-i18n="about.factLocationLabel">Ubicación</div><div class="value">Barranquilla, Colombia</div></div>
+          <div class="fact"><div class="label" data-i18n="about.factExperienceLabel">Experiencia</div><div class="value" data-i18n="about.factExperienceValue">+4 años en backend & bases de datos</div></div>
+          <div class="fact"><div class="label" data-i18n="about.factFocusLabel">Enfoque</div><div class="value" data-i18n="about.factFocusValue">Integraciones empresariales & automatización</div></div>
+          <div class="fact"><div class="label" data-i18n="about.factCvLabel">CV en inglés</div><div class="value"><a href="assets/cv/Andres_Tovar_CV_EN.pdf" id="altCvLink" target="_blank" rel="noopener" data-i18n="about.factCvLink">Descargar PDF ↗</a></div></div>
         </div>
       </div>
     </div>
@@ -68,21 +84,21 @@
   <section id="skills">
     <div class="container">
       <div class="section-head">
-        <div class="section-eyebrow">Stack</div>
-        <h2>Habilidades técnicas</h2>
+        <div class="section-eyebrow" data-i18n="skills.eyebrow">Stack</div>
+        <h2 data-i18n="skills.heading">Habilidades técnicas</h2>
       </div>
       <div class="skill-groups">
         <div class="skill-card">
-          <h3>Bases de datos</h3>
+          <h3 data-i18n="skills.databasesTitle">Bases de datos</h3>
           <div class="tag-row">
             <span class="tag">Oracle PL/SQL</span>
             <span class="tag">SQL Server T-SQL</span>
-            <span class="tag">Diseño & optimización</span>
-            <span class="tag">Respaldo & recuperación</span>
+            <span class="tag" data-i18n="skills.designOptimization">Diseño & optimización</span>
+            <span class="tag" data-i18n="skills.backupRecovery">Respaldo & recuperación</span>
           </div>
         </div>
         <div class="skill-card">
-          <h3>Lenguajes</h3>
+          <h3 data-i18n="skills.languagesTitle">Lenguajes</h3>
           <div class="tag-row">
             <span class="tag">C#</span>
             <span class="tag">Java</span>
@@ -91,7 +107,7 @@
           </div>
         </div>
         <div class="skill-card">
-          <h3>Herramientas</h3>
+          <h3 data-i18n="skills.toolsTitle">Herramientas</h3>
           <div class="tag-row">
             <span class="tag">Visual Studio</span>
             <span class="tag">SQL Developer</span>
@@ -103,12 +119,12 @@
           </div>
         </div>
         <div class="skill-card">
-          <h3>Metodologías & nube</h3>
+          <h3 data-i18n="skills.methodologiesTitle">Metodologías & nube</h3>
           <div class="tag-row">
-            <span class="tag">Ágil / Scrum</span>
+            <span class="tag" data-i18n="skills.agileScrum">Ágil / Scrum</span>
             <span class="tag">DevOps</span>
             <span class="tag">AWS Cloud Practitioner</span>
-            <span class="tag">Kubernetes (básico)</span>
+            <span class="tag" data-i18n="skills.kubernetesBasic">Kubernetes (básico)</span>
           </div>
         </div>
       </div>
@@ -118,18 +134,18 @@
   <section id="experience">
     <div class="container">
       <div class="section-head">
-        <div class="section-eyebrow">Trayectoria</div>
-        <h2>Experiencia profesional</h2>
+        <div class="section-eyebrow" data-i18n="experience.eyebrow">Trayectoria</div>
+        <h2 data-i18n="experience.heading">Experiencia profesional</h2>
       </div>
       <div class="timeline-item">
-        <p class="role">Ingeniero de Sistemas y Especialista en Soporte de Aplicaciones</p>
+        <p class="role" data-i18n="experience.role">Ingeniero de Sistemas y Especialista en Soporte de Aplicaciones</p>
         <p class="org">Cosistemas Ltda.</p>
-        <p class="meta">Enero 2023 — Actualidad · Barranquilla, Colombia</p>
+        <p class="meta" data-i18n="experience.meta">Enero 2023 — Actualidad · Barranquilla, Colombia</p>
         <ul>
-          <li><strong>Integración con SAP:</strong> diseño e implementación de una integración backend entre una aplicación de mantenimiento de activos y SAP, con sincronización en tiempo real de órdenes de trabajo, materiales y registros de mantenimiento. Resultado: reducción del 90% en tareas manuales y mayor trazabilidad.</li>
-          <li><strong>Administración de bases de datos:</strong> gestión de bases Oracle y SQL Server, creación y optimización de esquemas, procedimientos almacenados, triggers y jobs automatizados. Resultado: mejora del rendimiento de consultas en un 70%.</li>
-          <li><strong>Desarrollo de servicios web:</strong> servicios SOAP y REST en C# para comunicación entre sistemas internos y externos, aumentando la interoperabilidad y automatización de procesos.</li>
-          <li><strong>Soporte funcional y técnico:</strong> soporte a usuarios y áreas operativas en mantenimiento de activos, inventarios, compras y personal, garantizando la continuidad del negocio.</li>
+          <li data-i18n-html="experience.bullet1"><strong>Integración con SAP:</strong> diseño e implementación de una integración backend entre una aplicación de mantenimiento de activos y SAP, con sincronización en tiempo real de órdenes de trabajo, materiales y registros de mantenimiento. Resultado: reducción del 90% en tareas manuales y mayor trazabilidad.</li>
+          <li data-i18n-html="experience.bullet2"><strong>Administración de bases de datos:</strong> gestión de bases Oracle y SQL Server, creación y optimización de esquemas, procedimientos almacenados, triggers y jobs automatizados. Resultado: mejora del rendimiento de consultas en un 70%.</li>
+          <li data-i18n-html="experience.bullet3"><strong>Desarrollo de servicios web:</strong> servicios SOAP y REST en C# para comunicación entre sistemas internos y externos, aumentando la interoperabilidad y automatización de procesos.</li>
+          <li data-i18n-html="experience.bullet4"><strong>Soporte funcional y técnico:</strong> soporte a usuarios y áreas operativas en mantenimiento de activos, inventarios, compras y personal, garantizando la continuidad del negocio.</li>
         </ul>
       </div>
     </div>
@@ -138,27 +154,27 @@
   <section id="projects">
     <div class="container">
       <div class="section-head">
-        <div class="section-eyebrow">Trabajo</div>
-        <h2>Proyectos</h2>
+        <div class="section-eyebrow" data-i18n="projects.eyebrow">Trabajo</div>
+        <h2 data-i18n="projects.heading">Proyectos</h2>
       </div>
       <div class="project-grid">
         <div class="project-card">
-          <span class="badge">Sitio web corporativo</span>
+          <span class="badge" data-i18n="projects.p1Badge">Sitio web corporativo</span>
           <h3>ClimbSun Digital</h3>
-          <p>Desarrollo y mantenimiento del sitio web de ClimbSun Digital, empresa de servicios de TI para pymes canadienses. Migración del hosting a un flujo con despliegue automático desde GitHub, panel de administración (servicios, productos, contenido) y formulario de contacto con notificaciones por correo.</p>
+          <p data-i18n="projects.p1Desc">Desarrollo y mantenimiento del sitio web de ClimbSun Digital, empresa de servicios de TI para pymes canadienses. Migración del hosting a un flujo con despliegue automático desde GitHub, panel de administración (servicios, productos, contenido) y formulario de contacto con notificaciones por correo.</p>
           <p class="stack"><strong>Stack:</strong> React, Vite, Tailwind CSS, PocketBase</p>
-          <a class="link" href="https://climbsundigital.com" target="_blank" rel="noopener">Ver sitio en vivo ↗</a>
+          <a class="link" href="https://climbsundigital.com" target="_blank" rel="noopener" data-i18n="projects.viewLive">Ver sitio en vivo ↗</a>
         </div>
         <div class="project-card">
-          <span class="badge">Integración empresarial · Triple A</span>
-          <h3>Integración SAP (LBApps)</h3>
-          <p>Diseño y desarrollo de una integración entre el sistema de mantenimiento de activos y SAP para Triple A, compuesta por un servicio de Windows programado y un servicio web SOAP para el consumo y publicación de documentos XML (creación de ítems, órdenes de trabajo, materiales e inventario) contra una base de datos Oracle.</p>
+          <span class="badge" data-i18n="projects.p2Badge">Integración empresarial · Triple A</span>
+          <h3 data-i18n="projects.p2Title">Integración SAP (LBApps)</h3>
+          <p data-i18n="projects.p2Desc">Diseño y desarrollo de una integración entre el sistema de mantenimiento de activos y SAP para Triple A, compuesta por un servicio de Windows programado y un servicio web SOAP para el consumo y publicación de documentos XML (creación de ítems, órdenes de trabajo, materiales e inventario) contra una base de datos Oracle.</p>
           <p class="stack"><strong>Stack:</strong> C#, .NET, Windows Service, Web Service (SOAP/ASMX), Oracle, XML</p>
         </div>
         <div class="project-card">
-          <span class="badge">Automatización de datos · Somos</span>
-          <h3>Servicio de integración SQL → XML</h3>
-          <p>Servicio de Windows en C# desarrollado para Somos (Bogotá), que ejecuta consultas programadas contra SQL Server y genera automáticamente los archivos XML de intercambio a partir de los resultados, para alimentar procesos de integración de datos.</p>
+          <span class="badge" data-i18n="projects.p3Badge">Automatización de datos · Somos</span>
+          <h3 data-i18n="projects.p3Title">Servicio de integración SQL → XML</h3>
+          <p data-i18n="projects.p3Desc">Servicio de Windows en C# desarrollado para Somos (Bogotá), que ejecuta consultas programadas contra SQL Server y genera automáticamente los archivos XML de intercambio a partir de los resultados, para alimentar procesos de integración de datos.</p>
           <p class="stack"><strong>Stack:</strong> C#, .NET, Windows Service, SQL Server, XML</p>
         </div>
       </div>
@@ -168,8 +184,8 @@
   <section id="certifications">
     <div class="container">
       <div class="section-head">
-        <div class="section-eyebrow">Formación continua</div>
-        <h2>Certificaciones</h2>
+        <div class="section-eyebrow" data-i18n="certifications.eyebrow">Formación continua</div>
+        <h2 data-i18n="certifications.heading">Certificaciones</h2>
       </div>
       <div class="cert-grid" id="certGrid">
         <!-- populated by script.js -->
@@ -180,15 +196,15 @@
   <section id="education">
     <div class="container">
       <div class="section-head">
-        <div class="section-eyebrow">Académico</div>
-        <h2>Educación</h2>
+        <div class="section-eyebrow" data-i18n="education.eyebrow">Académico</div>
+        <h2 data-i18n="education.heading">Educación</h2>
       </div>
       <div class="edu-card">
         <div>
-          <div class="degree">Ingeniería de Sistemas</div>
+          <div class="degree" data-i18n="education.degree">Ingeniería de Sistemas</div>
           <div class="school">Universidad del Norte</div>
         </div>
-        <div class="meta">Graduado en 2024 · Barranquilla, Colombia</div>
+        <div class="meta" data-i18n="education.meta">Graduado en 2024 · Barranquilla, Colombia</div>
       </div>
     </div>
   </section>
@@ -196,10 +212,10 @@
   <section id="contact">
     <div class="container">
       <div class="contact-box">
-        <h2>¿Tienes un proyecto en mente?</h2>
-        <p>Disponible para trabajos freelance de desarrollo backend, integración de sistemas y automatización de procesos.</p>
+        <h2 data-i18n="contact.heading">¿Tienes un proyecto en mente?</h2>
+        <p data-i18n="contact.body">Disponible para trabajos freelance de desarrollo backend, integración de sistemas y automatización de procesos.</p>
         <div class="btn-row">
-          <a class="btn btn-primary" href="mailto:andrestovar2510@gmail.com">Escríbeme un correo</a>
+          <a class="btn btn-primary" href="mailto:andrestovar2510@gmail.com" data-i18n="contact.btnEmail">Escríbeme un correo</a>
           <a class="btn btn-secondary" href="https://github.com/aftovar123" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
@@ -210,7 +226,7 @@
 
 <footer>
   <div class="container">
-    © <span id="year"></span> Andrés Felipe Tovar Sandoval · Hecho con GitHub Pages
+    © <span id="year"></span> Andrés Felipe Tovar Sandoval · <span data-i18n="footer.built">Hecho con GitHub Pages</span>
   </div>
 </footer>
 
