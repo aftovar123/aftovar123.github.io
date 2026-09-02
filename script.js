@@ -2,9 +2,15 @@ document.getElementById("year").textContent = new Date().getFullYear();
 
 const navToggle = document.getElementById("navToggle");
 const navLinks = document.getElementById("navLinks");
-navToggle.addEventListener("click", () => navLinks.classList.toggle("open"));
+navToggle.addEventListener("click", () => {
+  const open = navLinks.classList.toggle("open");
+  navToggle.setAttribute("aria-expanded", String(open));
+});
 navLinks.querySelectorAll("a").forEach(a =>
-  a.addEventListener("click", () => navLinks.classList.remove("open"))
+  a.addEventListener("click", () => {
+    navLinks.classList.remove("open");
+    navToggle.setAttribute("aria-expanded", "false");
+  })
 );
 
 /* ---------- Certificates ---------- */
@@ -88,6 +94,7 @@ themeToggle.addEventListener("click", () => {
 /* ---------- Language toggle ---------- */
 const translations = {
   es: {
+    "a11y.skipToContent": "Saltar al contenido",
     "meta.title": "Andrés Tovar Sandoval — Ingeniero de Sistemas | Backend & Integraciones",
     "meta.description": "Portafolio de Andrés Felipe Tovar Sandoval, Ingeniero de Sistemas especializado en backend C#, bases de datos Oracle/SQL Server e integración de sistemas empresariales.",
     "nav.about": "Sobre mí",
@@ -153,6 +160,7 @@ const translations = {
     "footer.built": "Hecho con GitHub Pages",
   },
   en: {
+    "a11y.skipToContent": "Skip to content",
     "meta.title": "Andrés Tovar Sandoval — Systems Engineer | Backend & Integrations",
     "meta.description": "Portfolio of Andrés Felipe Tovar Sandoval, Systems Engineer specialized in C# backend development, Oracle/SQL Server databases, and enterprise system integration.",
     "nav.about": "About",

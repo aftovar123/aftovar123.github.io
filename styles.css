@@ -453,3 +453,31 @@ footer a { color: var(--accent); text-decoration: none; }
   .nav-links.open { display: flex; }
   .nav-toggle { display: inline-flex; }
 }
+
+/* Accessibility: skip link */
+.skip-link {
+  position: absolute;
+  top: -48px;
+  left: 12px;
+  z-index: 100;
+  background: var(--accent);
+  color: #06201d;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: top 0.2s;
+}
+
+.skip-link:focus {
+  top: 12px;
+}
+
+/* Accessibility: visible focus ring consistent with theme */
+a:focus-visible,
+button:focus-visible,
+.cert-card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
