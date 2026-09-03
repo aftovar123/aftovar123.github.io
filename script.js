@@ -1,5 +1,13 @@
 document.getElementById("year").textContent = new Date().getFullYear();
 
+/* ---------- Email obfuscation (avoid plain mailto: in static HTML) ---------- */
+const emailBtn = document.getElementById("emailBtn");
+if (emailBtn) {
+  const emailUser = ["a", "n", "d", "r", "e", "s", "t", "o", "v", "a", "r", "2", "5", "1", "0"].join("");
+  const emailDomain = ["g", "m", "a", "i", "l", ".", "c", "o", "m"].join("");
+  emailBtn.setAttribute("href", "mailto:" + emailUser + "@" + emailDomain);
+}
+
 const navToggle = document.getElementById("navToggle");
 const navLinks = document.getElementById("navLinks");
 navToggle.addEventListener("click", () => {

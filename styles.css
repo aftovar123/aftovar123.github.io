@@ -481,3 +481,15 @@ button:focus-visible,
   outline-offset: 3px;
   border-radius: 4px;
 }
+
+/* Project card thumbnail */
+.project-card .thumb {
+  width: calc(100% + 52px);
+  margin: -26px -26px 4px;
+  display: block;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top;
+  border-radius: var(--radius) var(--radius) 0 0;
+  border-bottom: 1px solid var(--border);
+}
