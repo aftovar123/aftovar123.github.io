@@ -1,7 +1,8 @@
 {
   "ci": {
     "collect": {
-      "staticDistDir": ".",
+      "startServerCommand": "npx http-server . -p 5000 -s",
+      "url": ["http://localhost:5000/index.html"],
       "numberOfRuns": 1
     },
     "assert": {
